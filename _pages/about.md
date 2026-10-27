@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Xiaoya Li"
+title: "About"
 author_profile: true
 classes: home
 redirect_from:
