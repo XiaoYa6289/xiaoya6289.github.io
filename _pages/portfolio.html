@@ -1,0 +1,31 @@
+---
+layout: archive
+title: "Research & Projects"
+permalink: /portfolio/
+author_profile: true
+---
+
+{% include base_path %}
+
+<p class="page-intro">Selected research and engineering projects across robot perception, embedded systems and learning-based control.</p>
+
+<div class="project-grid">
+{% assign projects = site.portfolio | sort: "order" %}
+{% for post in projects %}
+  <a class="project-card" href="{{ base_path }}{{ post.url }}">
+    <div class="project-card__banner project-card__banner--{{ post.theme }}">
+      <i class="fas {{ post.icon }}"></i>
+      <span class="project-card__kind">{{ post.kind }}</span>
+    </div>
+    <div class="project-card__body">
+      <p class="project-card__meta">{{ post.org }} &middot; {{ post.period }}</p>
+      <h2 class="project-card__title">{{ post.title }}</h2>
+      <p class="project-card__excerpt">{{ post.excerpt | strip_html }}</p>
+      {% if post.highlight %}<p class="project-card__highlight"><i class="fas fa-chart-line"></i> {{ post.highlight }}</p>{% endif %}
+      <div class="project-card__tags">
+        {% for tag in post.stack %}<span class="chip chip--sm">{{ tag }}</span>{% endfor %}
+      </div>
+    </div>
+  </a>
+{% endfor %}
+</div>
